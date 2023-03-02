@@ -1,0 +1,34 @@
+apply plugin: 'maven'
+
+/**
+ * 下面为创建本地仓库进行的设置
+ * 1、groupId唯一标识符：包名com.android.dzrefresh 对应路径：com/android/dzrefresh
+ * 2、artifactId module名称：App 对应路径：com/android/dzrefresh/App
+ * 3、version版本号：1.0.0 对应路径：com/android/dzrefresh/App/1.0.0
+ * 4、packaging 类库类型
+ * 5、description 描述
+ * 6、repository本地仓库路径
+ */
+uploadArchives {
+//    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+//            repository(url: mavenLocal().getUrl())
+            repository(url: uri('../repository'))
+            pom.project {
+                name 'cameralibrary'
+                artifactId 'cameraLibrary'
+                groupId 'com.kse.camerax'
+                version '1.0.0-alpha01'
+                packaging 'aar'
+                description 'zhenjian'
+
+            }
+        }
+    }
+}
+//android{
+//    defaultConfig {
+//        buildConfigField("String", "Ali_pay_url_v", '"v1"')
+//    }
+//}
