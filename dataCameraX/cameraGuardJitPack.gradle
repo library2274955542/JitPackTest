@@ -38,7 +38,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 artifactId 'DataLibrary'
                 groupId 'com.kse.camerax'
-                version '1.0.0-alpha02'
+                version '1.0.0-alpha03'
             }
         }
     }
